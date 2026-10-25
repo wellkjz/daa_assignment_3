@@ -1,0 +1,5 @@
+{"source":0,"target":3,"edge_ids":[0,2,3],"cost":0,"route":[0,1,2,3]}
+{"source":0,"target":0,"edge_ids":[],"cost":0,"route":[0]}
+{"source":0,"target":4,"edge_ids":[],"cost":"no route","route":[]}
+{"source":0,"target":1,"edge_ids":[1],"cost":2,"route":[0,1]}
+{"source":0,"target":2,"edge_ids":[3],"cost":1,"route":[0,2]}

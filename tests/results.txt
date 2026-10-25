@@ -1,0 +1,12 @@
+PASS 562 small cases; 1686 mixed requests in one JVM (seed 20261023)
+PASS 10 alternative-valid / invalid-witness assertions
+PASS DSU full limits: n=100000, count=250000
+PASS kruskal full limits: n=100000, count=250000
+PASS prim full limits: n=100000, count=250000
+PASS SCC deep chain/full limits: n=100000, count=250000
+PASS topo deep chain/full limits: n=100000, count=250000
+PASS DAG deep chain/full limits: n=100000, count=250000
+PASS SCC giant component: n=100000, count=250000
+PASS topo deep cycle: n=100000, count=250000
+PASS DAG full cycle unreachable from source: n=100000, count=250000
+PASS route helper: 5 routes + tied alternative parents + invalid parent cycle
