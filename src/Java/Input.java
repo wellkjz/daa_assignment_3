@@ -1,10 +1,10 @@
 import java.util.List;
 import java.util.Map;
 
-/**
- * Use these supplied methods to read input values; no changes are required.
- * They convert the parsed JSON values into ordinary int values and arrays.
- */
+
+
+
+
 public final class Input {
     private Input() {
     }
@@ -17,19 +17,19 @@ public final class Input {
         return integer(request.get("source"));
     }
 
-    /** Each row contains u, v. */
+
     public static int[][] operations(Map<String, Object> request) {
         return rows(request.get("operations"));
     }
 
-    /** Each row contains u, v, and (for weighted tasks) weight. */
+
     public static int[][] edges(Map<String, Object> request) {
         return rows(request.get("edges"));
     }
 
     private static int integer(Object value) {
-        // The JSON parser stores integers as Long, not Integer.
-        // All n/source/endpoint/weight values in this assignment fit int.
+
+
         return Math.toIntExact(((Number) value).longValue());
     }
 
@@ -47,3 +47,4 @@ public final class Input {
         return result;
     }
 }
+

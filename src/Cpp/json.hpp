@@ -2,8 +2,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Provided JSON transport for integer-valued assignment requests.
-// Use input.hpp to read your inputs; no changes to this parser are required.
 struct J {
     using A = vector<J>;
     using O = map<string, J>;
@@ -70,7 +68,7 @@ struct J {
 
         auto readString = [&]() -> string {
             skipWhitespace();
-            position++; // Opening quote.
+            position++;
             string result;
             while (true) {
                 char current = text.at(position++);
@@ -103,7 +101,7 @@ struct J {
                         break;
                     }
                     default:
-                        result += current; // Escaped quote, slash or backslash.
+                        result += current;
                         break;
                 }
             }
@@ -127,7 +125,7 @@ struct J {
                 while (true) {
                     string key = readString();
                     skipWhitespace();
-                    position++; // Colon.
+                    position++;
                     result[key] = readValue();
                     skipWhitespace();
                     if (text.at(position++) == '}') {
@@ -223,3 +221,4 @@ struct J {
         return result + '}';
     }
 };
+

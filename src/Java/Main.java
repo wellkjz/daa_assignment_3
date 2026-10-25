@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
-/** Provided program entry point. Implement your graph methods in Algorithms.java. */
+
 public final class Main {
     private static Map<String, Object> handle(Map<String, Object> request) {
         String task = (String) request.get("task");
@@ -43,9 +43,10 @@ public final class Main {
             try {
                 writer.println(Json.write(handle(request)));
             } catch (UnsupportedOperationException error) {
-                // Keep the JSON Lines protocol while a method still has its TODO.
+
                 writer.println(Json.write(Map.of("error", error.getMessage())));
             }
         }
     }
 }
+

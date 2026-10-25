@@ -1,10 +1,7 @@
-"""Use this supplied JSON Lines entry point. Implement your algorithms in algorithms.py."""
-
 import json
 import sys
 
 import algorithms
-
 
 def handle(request):
     task = request["task"]
@@ -24,7 +21,6 @@ def handle(request):
         return algorithms.dag(request)
     raise ValueError("Unknown task: " + task)
 
-
 def main():
     sys.stdin.reconfigure(encoding="utf-8")
     sys.stdout.reconfigure(encoding="utf-8")
@@ -37,6 +33,6 @@ def main():
             result = {"error": str(error)}
         print(json.dumps(result, ensure_ascii=False, separators=(",", ":")))
 
-
 if __name__ == "__main__":
     main()
+

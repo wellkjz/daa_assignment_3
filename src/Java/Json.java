@@ -4,11 +4,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-/**
- * Provided JSON input/output for the assignment's integer-valued requests.
- * Use this parser as supplied; you do not need to implement or modify it.
- * Use Input.java to obtain numbers and arrays in Algorithms.java.
- */
+
+
+
+
+
 final class Json {
     private final String text;
     private int position;
@@ -72,7 +72,7 @@ final class Json {
     }
 
     private Map<String, Object> readObject() {
-        position++; // Opening brace.
+        position++;
         Map<String, Object> result = new LinkedHashMap<>();
         skipWhitespace();
         if (text.charAt(position) == '}') {
@@ -83,7 +83,7 @@ final class Json {
         while (true) {
             String key = readString();
             skipWhitespace();
-            position++; // Colon.
+            position++;
             result.put(key, readValue());
             skipWhitespace();
 
@@ -91,12 +91,12 @@ final class Json {
             if (separator == '}') {
                 return result;
             }
-            skipWhitespace(); // After the comma.
+            skipWhitespace();
         }
     }
 
     private List<Object> readArray() {
-        position++; // Opening bracket.
+        position++;
         List<Object> result = new ArrayList<>();
         skipWhitespace();
         if (text.charAt(position) == ']') {
@@ -116,7 +116,7 @@ final class Json {
 
     private String readString() {
         skipWhitespace();
-        position++; // Opening quote.
+        position++;
         StringBuilder result = new StringBuilder();
 
         while (true) {
@@ -148,7 +148,7 @@ final class Json {
                         position += 4;
                         break;
                     default:
-                        // Escaped quote, backslash or slash.
+
                         break;
                 }
             }
@@ -199,7 +199,7 @@ final class Json {
     }
 
     private static String writeArray(Object value) {
-        // Internal transport detail: handles primitive and nested Java arrays.
+
         StringJoiner elements = new StringJoiner(",", "[", "]");
         int length = java.lang.reflect.Array.getLength(value);
         for (int i = 0; i < length; i++) {
@@ -208,3 +208,4 @@ final class Json {
         return elements.toString();
     }
 }
+

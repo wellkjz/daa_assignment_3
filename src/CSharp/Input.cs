@@ -1,6 +1,5 @@
 using System.Text.Json.Nodes;
 
-// Use these supplied input helpers; no changes are required.
 public static class Input
 {
     public static int VertexCount(JsonObject request)
@@ -32,10 +31,11 @@ public static class Input
             result[i] = new int[row.Count];
             for (int j = 0; j < row.Count; j++)
             {
-                // All input endpoints, weights, n and source fit int.
+
                 result[i][j] = row[j]!.GetValue<int>();
             }
         }
         return result;
     }
 }
+

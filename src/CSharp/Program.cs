@@ -1,7 +1,6 @@
 using System.Text;
 using System.Text.Json.Nodes;
 
-// Use this supplied entry point. Implement your algorithms in Algorithms.cs.
 public static class Program
 {
     private static JsonObject Handle(JsonObject request)
@@ -48,3 +47,4 @@ public static class Program
         }
     }
 }
+
